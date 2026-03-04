@@ -3,7 +3,10 @@ unique_ids:
     standard-page.html: NV3VKWXJ7JOQCO3L4I6YQV3PFYPBWWGS
     theme.css: SRJE2RP4ZLTYEEF54VMMRYFIBWRL3T5P
   forms:
-    Form1: HK6QATZBN6PFXIDEUR5VU5COU6A4MIFF
+    DashboardMarktwert: HK6QATZBN6PFXIDEUR5VU5COU6A4MIFF
+    DashboardTaktik: '1772619103125308478395292.23175'
+    Form1: '1772619259883661406705696.3607'
   modules: {}
   scripts: {}
-  server_modules: {}
+  server_modules:
+    ServerModule1: '1772618975905164693561087.6906'
