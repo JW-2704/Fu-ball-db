@@ -27,3 +27,13 @@ def get_stadium_stats():
     query = "SELECT name, ort, kapazitaet FROM Stadium ORDER BY kapazitaet DESC"
     cur.execute(query)
     return cur.fetchall()
+
+@anvil.server.callable
+def get_spieler_liste():
+  with sqlite3.connect(data_files['Fußball.db']) as conn:
+    cur = conn.cursor()
+    # Wir selektieren Name, Herkunft, Position und Marktwert
+    query = "SELECT name, herkunft, position, marktwert, alter_wert FROM Fußballer ORDER BY marktwert DESC"
+    cur.execute(query)
+    # Umwandlung in eine Liste von Dicts für das Data Grid
+    return [{'name': r[0], 'herkunft': r[1], 'position': r[2], 'marktwert': r[3], 'alter_wert': r[4]} for r in cur.fetchall()]

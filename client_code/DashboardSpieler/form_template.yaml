@@ -1,0 +1,17 @@
+components:
+- components:
+  - name: repeating_panel_1
+    properties: {item_template: DashboardSpieler.RowTemplate1}
+    type: RepeatingPanel
+  layout_properties: {grid_position: 'MOMMWG,NWABTF'}
+  name: data_grid_1
+  properties:
+    columns:
+    - {data_key: name, id: JKSDUP, title: Spielername}
+    - {data_key: herkunft, id: VJQQOR, title: Land}
+    - {data_key: position, id: OJLQEN, title: Position}
+    - {data_key: marktwert, id: FMAPPT, title: Marktwert €}
+    - {data_key: alter_wert, id: UETHRU, title: Alter}
+  type: DataGrid
+container: {type: ColumnPanel}
+is_package: true

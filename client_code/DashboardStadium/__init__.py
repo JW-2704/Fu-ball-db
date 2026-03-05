@@ -7,23 +7,20 @@ class DashboardStadium(DashboardStadiumTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
 
-    # Daten abrufen (Name, Ort, Kapazität)
     data = anvil.server.call('get_stadium_stats')
-
-    stadium_namen = [f"{r[2]} ({r[1]})" for r in data] # Name + Ort
+    labels = [f"{r[0]} - {r[1]}" for r in data]
     kapazitaet = [r[2] for r in data]
 
-    # Visualisierung der Stadionkapazitäten
     self.plot_stadium.data = [
       go.Bar(
-        x=stadium_namen,
+        x=labels,
         y=kapazitaet,
-        marker_color='#FF9800', # Orangefarbene Balken
+        marker_color='red',
         text=kapazitaet,
-        textposition='auto'
+        textposition='auto',
+        name="Plätze"
       )
     ]
+    self.plot_stadium.layout.title = "Stadien und Standorte"
 
-    self.plot_stadium.layout.title = "Stadien nach Kapazität"
-    self.plot_stadium.layout.xaxis.title = "Stadion (Ort)"
-    self.plot_stadium.layout.yaxis.title = "Plätze"
+  
