@@ -23,6 +23,10 @@ components:
     name: taktik
     properties: {text: Taktik Board}
     type: Button
+  - layout_properties: {grid_position: 'WYNCFT,JLWDJT'}
+    name: stadium
+    properties: {text: Stadien}
+    type: Button
   layout_properties: {slot: left-nav}
   name: column_panel_1
   properties: {}

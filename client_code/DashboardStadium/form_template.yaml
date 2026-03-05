@@ -1,0 +1,7 @@
+components:
+- layout_properties: {grid_position: 'KJBJYJ,LUXTML'}
+  name: plot_stadium
+  properties: {}
+  type: Plot
+container: {type: ColumnPanel}
+is_package: true

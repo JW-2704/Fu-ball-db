@@ -1,4 +1,4 @@
-from anvil import data_files
+from anvil.files import data_files
 import anvil.server
 import sqlite3
 
@@ -17,3 +17,13 @@ def get_formation_stats():
   cur = conn.cursor()
   cur.execute("SELECT taktik, COUNT(*) FROM Formation GROUP BY taktik")
   return cur.fetchall()
+
+@anvil.server.callable
+def get_stadium_stats():
+  with sqlite3.connect(data_files['Fußball.db']) as conn:
+    cur = conn.cursor()
+    # Verknüpft Verein mit Stadium über die Spiel-Tabelle oder direkt, 
+    # hier basierend auf der Stadium-Tabelle für eine Kapazitätsübersicht
+    query = "SELECT name, ort, kapazitaet FROM Stadium ORDER BY kapazitaet DESC"
+    cur.execute(query)
+    return cur.fetchall()
