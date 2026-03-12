@@ -37,3 +37,12 @@ def get_spieler_liste():
     cur.execute(query)
     # Umwandlung in eine Liste von Dicts für das Data Grid
     return [{'name': r[0], 'herkunft': r[1], 'position': r[2], 'marktwert': r[3], 'alter_wert': r[4]} for r in cur.fetchall()]
+
+
+@anvil.server.callable
+def get_wettbewerb_liste():
+  with sqlite3.connect(data_files['Fußball.db']) as conn:
+    cur = conn.cursor()
+    query = "SELECT name, preisgeld, runden FROM Wettbewerb ORDER BY preisgeld"    
+    cur.execute(query)
+    return [{"name": r[0], "preisgeld": r[1], "runden": [2]} for r in cur.fetchall()]

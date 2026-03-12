@@ -1,0 +1,15 @@
+components:
+- components:
+  - name: repeating_panel_1
+    properties: {item_template: DashboardWettbewerbe.RowTemplate2}
+    type: RepeatingPanel
+  layout_properties: {grid_position: 'FPLCJP,BLPGUB'}
+  name: data_grid_1
+  properties:
+    columns:
+    - {data_key: name, id: JKSDUP, title: Wettbewerb}
+    - {data_key: preisgeld, id: VJQQOR, title: Preisgeld}
+    - {data_key: runden, id: OJLQEN, title: Runden}
+  type: DataGrid
+container: {type: ColumnPanel}
+is_package: true

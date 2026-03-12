@@ -31,6 +31,11 @@ components:
     name: spieler
     properties: {text: Spieler}
     type: Button
+  - event_bindings: {}
+    layout_properties: {grid_position: 'SIBPXJ,BNWXRJ'}
+    name: button_1
+    properties: {text: Wettbewerbe}
+    type: Button
   layout_properties: {slot: left-nav}
   name: column_panel_1
   properties: {}
