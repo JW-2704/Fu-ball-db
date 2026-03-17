@@ -36,5 +36,5 @@ def get_spieler_liste():
 def get_wettbewerb_liste():
   with sqlite3.connect(data_files['Fußball.db']) as conn:
     cur = conn.cursor()
-    cur.execute("SELECT preisgeld, runden FROM Wettbewerb")
-    return [{"preisgeld": r[0], "runden": [1]} for r in cur.fetchall()]
+    cur.execute("SELECT turnier_name, preisgeld, anzahl_runden FROM Wettbewerb")
+    return [{"turnier_name": r[0], "preisgeld": r[1], "anzahl_runden": [2]} for r in cur.fetchall()]
