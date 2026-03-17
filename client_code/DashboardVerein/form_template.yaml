@@ -1,0 +1,15 @@
+components:
+- components:
+  - name: repeating_panel_1
+    properties: {item_template: DashboardVerein.RowTemplate3}
+    type: RepeatingPanel
+  layout_properties: {grid_position: 'YURVBM,NPWEMY'}
+  name: data_grid_1
+  properties:
+    columns:
+    - {data_key: name, id: JKSDUP, title: Verein}
+    - {data_key: personal, id: VJQQOR, title: Trainer}
+    - {data_key: gruendung, id: OJLQEN, title: Gründungsdatum}
+  type: DataGrid
+container: {type: ColumnPanel}
+is_package: true

@@ -1,0 +1,17 @@
+components:
+- components:
+  - name: repeating_panel_1
+    properties: {item_template: DashboardSpiele.RowTemplate5}
+    type: RepeatingPanel
+  layout_properties: {grid_position: 'VMNCXZ,AMDTGX'}
+  name: data_grid_1
+  properties:
+    columns:
+    - {data_key: datum, id: JKSDUP, title: Datum}
+    - {data_key: paarung, id: VJQQOR, title: Begegnung}
+    - {data_key: ergebnis, id: OJLQEN, title: Ergebnis}
+    - {data_key: stadium, id: JBBCIC, title: Stadion}
+    - {data_key: zuschauer, id: KDUXEB, title: Zuschauer}
+  type: DataGrid
+container: {type: ColumnPanel}
+is_package: true

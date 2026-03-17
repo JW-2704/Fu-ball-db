@@ -7,9 +7,9 @@ components:
   name: data_grid_1
   properties:
     columns:
-    - {data_key: name, id: JKSDUP, title: Wettbewerb}
+    - {data_key: turnier_name, id: JKSDUP, title: Wettbewerb}
     - {data_key: preisgeld, id: VJQQOR, title: Preisgeld}
-    - {data_key: runden, id: OJLQEN, title: Runden}
+    - {data_key: anzahl_runden, id: OJLQEN, title: Runden}
   type: DataGrid
 container: {type: ColumnPanel}
 is_package: true
