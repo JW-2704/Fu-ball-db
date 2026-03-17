@@ -6,7 +6,7 @@ from ..DashboardMarktwert import DashboardMarktwert
 from ..DashboardTaktik import DashboardTaktik
 from ..DashboardStadium import DashboardStadium
 from ..DashboardSpieler import DashboardSpieler
-from ..DashboardWettbewerbe import DashboardWettbewerbe
+from ..DashboardWettbewerb import DashboardWettbewerb
 
 class Startseite(StartseiteTemplate):
   def __init__(self, **properties):
@@ -16,7 +16,7 @@ class Startseite(StartseiteTemplate):
     self.taktik_form = DashboardTaktik()
     self.stadium_form = DashboardStadium()
     self.spieler_form = DashboardSpieler()
-    self.wettbewerb_form = DashboardWettbewerbe()
+    self.wettbewerb_form = DashboardWettbewerb()
 
     self.column_panel_2.clear()
 
@@ -44,8 +44,10 @@ class Startseite(StartseiteTemplate):
     self.column_panel_2.clear()
     self.column_panel_2.add_component(self.spieler_form)
 
-  @handle("button_1", "click")
-  def button_1_click(self, **event_args):
+  @handle("wettbewerb", "click")
+  def wettbewerb_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.coloum_panel_2.clear()
+    self.column_panel_2.clear()
     self.column_panel_2.add_component(self.wettbewerb_form)
+
+

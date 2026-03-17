@@ -8,8 +8,8 @@ unique_ids:
     DashboardSpieler.RowTemplate1: '1772709619943956451287866.7614'
     DashboardStadium: '1772707930624794366115807.0675'
     DashboardTaktik: '1772619103125308478395292.23175'
-    DashboardWettbewerbe: '1773313878433251149136615.9023'
-    DashboardWettbewerbe.RowTemplate2: '1773313909220393719918177.35406'
+    DashboardWettbewerb: '1773313878433251149136615.9023'
+    DashboardWettbewerb.RowTemplate2: '1773313909220393719918177.35406'
     Startseite: '1772619259883661406705696.3607'
   modules: {}
   scripts: {}

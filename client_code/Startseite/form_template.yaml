@@ -33,7 +33,7 @@ components:
     type: Button
   - event_bindings: {}
     layout_properties: {grid_position: 'SIBPXJ,BNWXRJ'}
-    name: button_1
+    name: wettbewerb
     properties: {text: Wettbewerbe}
     type: Button
   layout_properties: {slot: left-nav}
