@@ -50,24 +50,16 @@ def get_wettbewerb_liste():
 def get_spiele_liste():
   conn = sqlite3.connect(data_files['Fußball.db'])
   cur = conn.cursor()
-  # 1. Hauptdaten aus Spiel, Stadium und Wettbewerb holen
-  query = """
-    SELECT s.spid, s.datum, s.ergebnis, s.zuschauer, st.name, w.turnier_name
-    FROM Spiel s
-    LEFT JOIN Stadium st ON s.sid = st.sid
-    LEFT JOIN Wettbewerb w ON s.wid = w.wid
-    """
-  cur.execute(query)
+  cur.execute("SELECT Spiel.spid, Spiel.datum, Spiel.ergebnis, Spiel.zuschauer, Stadium.name, Wettbewerb.turnier_name FROM Spiel LEFT JOIN Stadium ON Spiel.sid = Stadium.sid LEFT JOIN Wettbewerb ON Spiel.wid = Wettbewerb.wid")
   rows = cur.fetchall()
 
   spiele_liste = []
   for r in rows:
     spid = r[0]
-    # 2. Die beteiligten Vereine für dieses Spiel aus der Tabelle 'Hat' holen
     cur.execute("""
-            SELECT v.name FROM Verein v 
-            JOIN Hat h ON v.vid = h.vid 
-            WHERE h.spid = ?
+            SELECT Verein.name FROM Verein 
+            JOIN Hat ON Verein.vid = Hat.vid 
+            WHERE Hat.spid = ?
         """, (spid,))
     vereine = [row[0] for row in cur.fetchall()]
 
